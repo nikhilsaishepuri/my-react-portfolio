@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap');
+
+/* Base Styles */
+.heroSection {
+  position: relative;
+  min-height: 100vh; /* Changed from height to min-height */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px; /* Added padding for mobile */
+  box-sizing: border-box;
+}
+
+/* Typography */
+.textContainer {
+  margin-bottom: 20px; /* Reduced for mobile */
+  text-align: center; /* Center align for mobile */
+  width: 100%;
+  max-width: 900px; /* Added max-width */
+  padding: 0 20px; /* Added padding */
+}
+
+.greeting {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 15px; /* Reduced */
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: 'Caveat', cursive;
+}
+
+.nameHighlight {
+  color: #c809ea;
+  font-weight: 700;
+  display: inline-block; /* Better for line breaks */
+}
+
+.role {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  margin-bottom: 30px; /* Reduced */
+  font-weight: 400;
+  font-family: 'Caveat', cursive;
+  line-height: 1.4;
+}
+
+.typingText {
+  color: #c809ea;
+  font-weight: 600;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+  color: #c809ea;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Buttons */
+.buttonGroup {
+  display: flex;
+  gap: 15px; /* Reduced */
+  margin-bottom: 30px; /* Reduced */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.resumeButton, .contactButton {
+  padding: 10px 25px; /* Slightly reduced */
+  border-radius: 30px;
+  font-size: 0.95rem; /* Slightly smaller */
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Caveat', cursive;
+  white-space: nowrap;
+}
+
+.resumeButton {
+  color: #16213e;
+  border: 2px solid #c809ea;
+  background: rgba(200, 9, 234, 0.1);
+}
+
+.resumeButton:hover {
+  transform: translateY(-3px);
+  background: #c809ea;
+  color: white;
+}
+
+.contactButton {
+  background: transparent;
+  color: #16213e;
+  border: 2px solid #c809ea;
+}
+
+.contactButton:hover {
+  background: #c809ea;
+  transform: translateY(-3px);
+  color: white;
+}
+
+.buttonIcon {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.resumeButton:hover .buttonIcon,
+.contactButton:hover .buttonIcon {
+  transform: translateY(3px);
+}
+
+/* Certifications */
+.certifications {
+  display: flex;
+  gap: 20px; /* Reduced */
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%; /* Ensure it doesn't overflow */
+}
+
+.certificationBadge {
+  border-radius: 10px;
+  padding: 8px; /* Reduced */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  background: white; /* Added background */
+}
+
+.certificationBadge:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.badgeImage {
+  height: 100px; /* Reduced default size */
+  width: auto;
+  max-width: 100%; /* Ensure responsive */
+  object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroSection {
+    width: 100vw;
+    padding-top: 80px; /* Space for navbar */
+    padding-bottom: 40px;
+  }
+
+  .buttonGroup {
+    flex-direction: row; /* Keep row layout but allow wrap */
+    gap: 10px;
+  }
+
+  .resumeButton, .contactButton {
+    padding: 6px 16px;
+    font-size: 1.1rem;
+    height: 32px;
+  }
+  
+ 
+
+  .certifications {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .certificationBadge {
+    width: auto;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .greeting {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  .role {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+  }
+
+  .buttonGroup {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .resumeButton, 
+  .contactButton {
+    width: auto;
+    justify-content: center;
+  }
+
+  .badgeImage {
+    height: 80px;
+  }
+}
+
+/* Dark Mode Support */
+.dark .heroSection {
+  background-color: #121212;
+  color: white;
+}
+
+.dark .resumeButton,
+.dark .contactButton {
+  color: white;
+}
+
+.dark .certificationBadge {
+  background: #1e1e1e;
+}
+
+.dark .nameHighlight,
+.dark .typingText,
+.dark .cursor {
+  color: #d83ff5; /* Slightly brighter purple for dark mode */
+}

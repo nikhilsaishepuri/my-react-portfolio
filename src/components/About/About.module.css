@@ -1,0 +1,349 @@
+/* Base Styles - Mobile First Approach */
+.about {
+  min-height: 100vh;
+  padding: 1.5rem;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section1 {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.section1 h2 {
+  font-size: 2rem;
+  position: relative;
+  margin-top: 50px;
+  
+}
+
+
+/* About Content Row */
+.aboutRow1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.aboutRow1 .data,
+.aboutRow1 .photo {
+  width: 100%;
+}
+
+.aboutRow1 .photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profilePhoto {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.profilePhoto:hover {
+  transform: scale(1.03);
+}
+
+.aboutRow1 p {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Tab System */
+.aboutRow2 {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.tabTitle {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tabLinks {
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.tabLinks::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background: #c809ea;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.tabLinks.activeLink {
+  color: #c809ea;
+  font-weight: 600;
+}
+
+.tabLinks.activeLink::after {
+  width: 100%;
+}
+
+.tabContents {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.tabContents.activeTab {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Skills Section */
+.skillsContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.skillCard {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.skillCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(200, 9, 234, 0.1);
+}
+
+.skillCard h3 {
+  color: #c809ea;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.skillLogos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.skillImg, .skillImga {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.skillImg:hover, .skillImga:hover {
+  transform: scale(1.2);
+}
+
+/* Education & Certification Cards */
+.eduRow, .certRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.eduCard, .certCard {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.eduCard:hover, .certCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(200, 9, 234, 0.2);
+}
+
+.eduCard h3, .certCard h3 {
+  color: #c809ea;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.eduDetails, .certDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.eduMeta, .certItem p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.certLink {
+  color: #2a7fba;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.certLink:hover {
+  color: #c809ea;
+  text-decoration: underline;
+}
+
+/* Dark Mode Styles */
+.dark .about {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark .section1 h2 {
+  color: #ffffff;
+}
+
+.dark .aboutRow1 p {
+  color: #e0e0e0;
+}
+
+.dark .profilePhoto {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.dark .skillCard,
+.dark .eduCard,
+.dark .certCard {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+.dark .skillCard h3,
+.dark .eduCard h3,
+.dark .certCard h3 {
+  border-bottom-color: #333;
+}
+
+.dark .eduMeta,
+.dark .certItem p {
+  color: #b0b0b0;
+}
+
+/* Tablet Responsiveness (600px and up) */
+@media (min-width: 600px) {
+  .about {
+    padding: 2rem;
+  }
+  
+  .skillsContainer,
+  .eduRow,
+  .certRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .aboutRow1 p {
+    font-size: 1.05rem;
+  }
+}
+
+/* Small Desktop/Large Tablet (900px and up) */
+@media (min-width: 900px) {
+  .aboutRow1 {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .aboutRow1 .data {
+    width: 60%;
+  }
+  
+  .aboutRow1 .photo {
+    width: 40%;
+  }
+  
+  .skillsContainer,
+  .eduRow,
+  .certRow {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .section1 h2 {
+    font-size: 2.5rem;
+  }
+  
+  .tabLinks {
+    font-size: 1.2rem;
+  }
+}
+
+/* Large Desktop (1200px and up) */
+@media (min-width: 1200px) {
+  .about {
+    padding: 4% 6%;
+  }
+  
+  .skillsContainer {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .aboutRow1 p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  .tabLinks {
+    font-size: 1.5rem;
+  }
+}
+
+/* Very Small Mobile Devices (under 400px) */
+@media (max-width: 400px) {
+  .about {
+    padding: 1rem;
+  }
+  
+  .section1 h2 {
+    font-size: 1.8rem;
+  }
+  
+  .tabTitle {
+    gap: 0.5rem;
+  }
+  
+  .tabLinks {
+    font-size: 0.9rem;
+  }
+}
