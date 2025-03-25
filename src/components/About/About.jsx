@@ -21,7 +21,7 @@ const About = () => {
           </div>
           <div className={styles.photo}>
             <img 
-              src="/Images/3.jpg" 
+              src="Images/3.jpg" 
               alt="Nikhil Sai Shepuri" 
               className={styles.profilePhoto}
             />
